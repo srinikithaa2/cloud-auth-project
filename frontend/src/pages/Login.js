@@ -2,6 +2,8 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 
+import "../styles/Auth.css";
+
 function Login() {
   const navigate = useNavigate();
 
@@ -37,34 +39,35 @@ function Login() {
   };
 
   return (
-    <div style={{ padding: "30px" }}>
-      <h1>Login</h1>
+    <div className="auth-container">
+      <div className="auth-card">
+        <h1>Job Tracker</h1>
 
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          name="email"
-          placeholder="Enter Email"
-          onChange={handleChange}
-        />
+        <h2>Welcome Back</h2>
 
-        <br /><br />
+        <form onSubmit={handleSubmit}>
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter Email"
+            onChange={handleChange}
+          />
 
-        <input
-          type="password"
-          name="password"
-          placeholder="Enter Password"
-          onChange={handleChange}
-        />
+          <input
+            type="password"
+            name="password"
+            placeholder="Enter Password"
+            onChange={handleChange}
+          />
 
-        <br /><br />
+          <button type="submit">Login</button>
+        </form>
 
-        <button type="submit">Login</button>
-      </form>
-
-      <br />
-
-      <Link to="/">Create New Account</Link>
+        <p>
+          New user?
+          <Link to="/"> Register</Link>
+        </p>
+      </div>
     </div>
   );
 }
