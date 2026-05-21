@@ -25,7 +25,7 @@ function Register() {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/auth/register",
+        "http://16.171.175.123:5000/api/auth/register",
         formData
       );
 
